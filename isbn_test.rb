@@ -22,4 +22,8 @@ class Testisbn < Minitest::Test
         isbn_num="0471958697123"
         assert_equal(true,isbn_length13(isbn_num))
     end
+    def test_isbn_x
+        isbn_num="047195869x"
+        assert_equal(true,letter_check(isbn_num))
+    end
 end

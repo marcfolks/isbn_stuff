@@ -7,3 +7,9 @@ end
 def isbn_remove(isbn_num)
     isbn_num.gsub(/[ ,-]/,"")
 end
+def letter_check(isbn_num)
+    if isbn_num == ("a..z") then false
+        elsif ("x") then true
+    end
+end
+
