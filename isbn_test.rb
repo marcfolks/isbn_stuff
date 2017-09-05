@@ -26,14 +26,20 @@ class Testisbn < Minitest::Test
     #     isbn_num="047195869x"
     #     assert_equal(true,letter_check(isbn_num))
     # end
-    def test_isbn_special_symbol
-        isbn_num=" 053849781x"
-        assert_equal(false,isbn_x_detect(isbn_num))
-    end
-#     def test_isbn_L
-#         isbn_num="047195867L"
-#         assert_equal(false,letter_check(isbn_num))
-#     end
+    # def test_isbn_special_symbol
+    #     isbn_num=" 053849781x"
+    #     assert_equal("valid",isbn_x_detect(isbn_num))
+    # end
+def test_isbn_L
+         isbn_num="047195867l"
+         assert_equal("invalid",isbn_x_detect(isbn_num))
+     end
+
+
+    def test_isbn_L
+         isbn_num="047195867x"
+         assert_equal(["04719586710"],isbn_x_detect(isbn_num))
+     end
 #     def test_13isbn_letter
 #         isbn_num="03495812323x"
 #      #   assert_equal(true,letter_check(isbn_num))

@@ -8,13 +8,21 @@ def isbn_remove(isbn_num)
     isbn_num.gsub(/[ ,-]/,"")
 end
 def isbn_x_detect(isbn_num)
-    isbn = isbn_num.split("")
+    isbn_num2=[]#empty arry
+    isbn = isbn_num.split("")#break the element into array
     p isbn
-    isbn_x = isbn.pop
-    isbn_x == ('x,X')
-    isbn.push('10')
-    p isbn
+    if isbn.include?("x")#find a x if x is there
+     isbn.pop
+        p isbn
+        isbn.push('10')#put ten in place of x
+        p isbn
+        isbn_num2 << isbn.join
+        else p "invalid"
+        p isbn_num2
+        p isbn
 end
+    end
+
 # def letter_check(isbn_num)
 #     if isbn_num.match('x') then true
 #         else false
