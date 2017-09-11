@@ -16,7 +16,7 @@ class Testisbn < Minitest::Test
     end
      def test_isbn_space
          isbn_num="047195869j"
-         assert_equal("invalid",isbn_x_detect(isbn_num))
+         assert_equal("invalid",alpha_check(isbn_num))
      end
     # def test_isbn_13
     #     isbn_num="0471958697123"
@@ -38,7 +38,7 @@ class Testisbn < Minitest::Test
 
     def test_isbn_L
          isbn_num="0471958678"
-         assert_equal("0471958678",isbn_x_detect(isbn_num))
+         assert_equal("valid",alpha_check(isbn_num))
     end
 #     def test_13isbn_letter
 #         isbn_num="03495812323x"
