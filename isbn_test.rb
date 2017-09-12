@@ -38,7 +38,10 @@ class Testisbn < Minitest::Test
 #          isbn_num="0471958698"
 #          assert_equal("valid",checksum(isbn_num))
 #      end
-
+def test_isbn_val
+    isbn_num="0471958678"
+    assert_equal("valid",isbn_val(isbn_num))
+    end
 
     def test_isbn_L
          isbn_num="0471958678"

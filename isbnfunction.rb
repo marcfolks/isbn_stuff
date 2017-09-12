@@ -33,10 +33,12 @@ if last == (pain)
   then    isbn.push('10')
     else isbn.push(last)
 end
+    p isbn
     isbn.join
 end
  def lettercheck(isbn_num)
-    isbn_num.match(/^[0-9]+$/)
+    isbn = isbn_num.split('')
+    isbn.any('1..10')
   
  end
 
@@ -93,9 +95,10 @@ end
         puts "csumTotal = #{csumTotal}" 
         checkDigit = csumTotal % 11
         p checkDigit 
-       if (checkDigit == "10") 
-          checkDigit = 'X'
-           if checkDigit = iarr.last
+        if checkDigit = iarr.last
+            "valid"
+            else "invalid
+            "
             
            end
        end 
@@ -106,16 +109,11 @@ end
 #        puts "for partial isbn #{isbn_num} the checkDigit = #{checkDigit}; complete isbn = #{isbn_num}#{checkDigit}" 
 #         checkDigit 
 #       #i didnt make this i copied and paste it to try an learn from it it seems be general ball park
-# def isbn_checker(isbn_num)
-#     val = "invalid"
-#        isbn_length10(isbn_num)
-#         isbn_remove(isbn_num)
-#        isbn_x_detect(isbn_num)
-#        if checksum(isbn_num)== true
-#         val="valid"
-        
-#        end 
+ def isbn_val(isbn_num)
+    isbn_remove(isbn_num)
+    isbn_length10(isbn_num)
+    isbncheck(isbn_num)
+    isbn_length10(isbn_num)
+    checksum(isbn_num)
+    end
 
-#     end    
-
-# end
