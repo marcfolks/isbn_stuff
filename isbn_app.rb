@@ -1,16 +1,14 @@
 require "sinatra"
 require_relative 'isbnfunction.rb'
+require "csv"
 
 
 get '/' do
     erb :index
-    end
-post'/results' do
-    isbn_num = params[:number].to_s
-    end
+    end    
 post '/number' do
     isbn_num = params[:isbn_num].to_s
-    checker = isbn_val(isbn_num)
-    val = isbn_val(isbn_num)
-    erb :number, :locals=>{:val=>val,:isbn_num=>isbn_num,:checker=>checker}
+    validate = checksum10(isbn_num)
+    validate = checksum13(isbn_num)
+    erb :number, :locals=>{:isbn_num=>isbn_num,:validate=>validate}
     end

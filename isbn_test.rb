@@ -1,5 +1,5 @@
  require"minitest/autorun"
- require_relative "blakes_isbn.rb"
+ require_relative "isbnfunction.rb"
  class Testisbn < Minitest::Test
 
 #     # def test_isbn_number_digits
@@ -39,8 +39,8 @@
 #           assert_equal("valid",numcheck(isbn_num))
 #       end
  def test_isbn_val
-      input="0471958678"
-      assert_equal("valid",initialize(input))
+      isbn_num="047195869x"
+      assert_equal("valid",isbn_val(isbn_num))
       end
 
 #     def test_isbn_L
